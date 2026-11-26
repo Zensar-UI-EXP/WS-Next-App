@@ -1,0 +1,16 @@
+/* A4 print / Save as PDF: app chrome hidden, one report page per printed page. */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body { background: #fff; }
+  .no-print, .sidenav, .topbar, .notice, .final-bar { display: none !important; }
+  .shell, .shell.nav-closed { display: block; }
+  .report-pages { background: #fff; padding: 0; gap: 0; }
+  .report-page-wrap { width: auto; }
+  .sheet { width: 210mm; min-height: 297mm; box-shadow: none; padding: 18mm 16mm 20mm; break-after: page; page-break-after: always; }
+  .sheet-foot { left: 16mm; right: 16mm; bottom: 8mm; }
+  .sheet-block, .kpi, .chart-canvas { break-inside: avoid; }
+}
